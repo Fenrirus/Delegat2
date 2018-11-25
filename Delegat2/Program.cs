@@ -10,6 +10,16 @@ namespace Delegat2
     {
         static void Main(string[] args)
         {
+            ConvertIntToString someMethod = new ConvertIntToString(HiThere);
+            string messege = someMethod(5);
+            Console.WriteLine(messege);
+            Console.ReadKey();
+        }
+        delegate string ConvertIntToString(int i);
+        private static string HiThere(int i)
+        {
+            return "Witamy towarzyszu " + (i * 100);
         }
     }
+  
 }
